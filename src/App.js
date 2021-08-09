@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import AddNotes from "./Components/AddNotes";
+import Header from "./Components/Header";
+import ListNote from "./Components/ListNote";
 
 function App() {
+
+  const [taskList, setTaskList] = useState([{name:"task1",isComplete:"false"}]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(e.target[0].value) ;
+    const newTask = {name:e.target[0].value,isComplete:"false"}
+    setTaskList([...taskList, newTask]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header />
+       <AddNotes  submitHandler={handleSubmit}/>
+       <ListNote taskList={taskList}/>
     </div>
   );
 }
