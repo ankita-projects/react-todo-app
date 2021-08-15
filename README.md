@@ -27,7 +27,7 @@ npm install --save @fortawesome/react-fontawesome
 
 ## Screenshot
 
-![screenshot](./public/image/To-Do App.jpg)
+![screenshot](https://raw.githubusercontent.com/ankita-projects/react-todo-app/main/public/image/To-Do%20App.jpg)
 
 ## Acknowledgment
 
